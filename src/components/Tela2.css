@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+#tela2 {
+    background: rgba(255, 255, 255, 0.04);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    width: 100%;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    margin: 0 auto;
+}
+
+/* título da seção */
+#tela2 h1 {
+    font-size: 58px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: linear-gradient(to left , #00d9ff, #ff006e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* título do texto */
+.texth3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* destaque do texto */
+.texth3 span {
+    background: linear-gradient(90deg, #00d9ff, #ff006e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* parágrafos */
+.secao p {
+    font-size: 18px;
+    line-height: 1.7;
+    line-break: anywhere;
+    margin-bottom: 18px;
+    color: var(--text-muted);
+}
+
+
+
+/* responsividade */
+@media (max-width: 768px) {
+    #tela2 {
+        height: auto;
+        padding: 40px 15px;
+        margin: 0 auto;
+    }
+
+    #tela2 h1 {
+        font-size: 36px;
+        margin-top: 3rem;
+    }
+
+    .texth3 {
+        font-size: 22px;
+    }
+
+    .secao p {
+        font-size: 16px;
+        text-align: justify;
+        line-break: anywhere;
+        box-sizing: border-box;
+        line-height: 1.5;
+    }
+
+}
