@@ -18,11 +18,12 @@
 #tela2 h1 {
     font-size: 58px;
     margin-bottom: 40px;
+    margin-top: -7rem;
     font-weight: 700;
     font-family: "Bungee", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background: linear-gradient(to left , #00d9ff, #ff006e);
+    background: linear-gradient(to left, #00d9ff, #ff006e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -51,6 +52,137 @@
     color: var(--text-muted);
 }
 
+/* Container dos ícones */
+.info-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+/* Cada item com ícone */
+.icon-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 14px;
+    color: #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.icon-item:hover {
+    transform: translateY(-3px);
+}
+
+.icon-item:nth-child(1) {
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.8), inset 0 0 10px rgba(0, 255, 65, 0.1);
+}
+
+.icon-item:nth-child(2) {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--neon-pink);
+    box-shadow: 0 0 20px var(--neon-pink), inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.icon-item:nth-child(3) {
+    background: rgba(131, 56, 236, 0.05);
+    border: 1px solid rgba(131, 56, 236, 0.1);
+    box-shadow: 0 0 20px var(--neon-purple), inset 0 0 20px rgba(131, 56, 236, 0.1);
+}
+
+.icon-item:nth-child(4) {
+    background: rgba(255, 190, 11, 0.05);
+    border: 1px solid rgba(255, 190, 11, 0.1);
+    box-shadow: 0 0 20px var(--neon-yellow), inset 0 0 20px rgba(255, 190, 11, 0.1);
+}
+
+.icon-item:nth-child(1) .icon {
+    color: var(--neon-green);
+}
+
+.icon-item:nth-child(2) .icon {
+    color: var(--neon-pink);
+}
+.icon-item:nth-child(3) .icon {
+    color: var(--neon-purple);
+}
+
+.icon-item:nth-child(4) .icon {
+    color: var(--neon-yellow);
+}
+
+/* Grid das estatísticas sobre */
+.stats-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Card de estatística da página sobre*/
+.stat-item {
+    background: rgba(0, 217, 255, 0.05);
+    border: 1px solid rgba(0, 217, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Hover do card */
+.stat-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 217, 255, 0.5);
+    background: rgba(0, 217, 255, 0.05);
+    border: 1px solid var(--neon-cyan);
+    box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 20px rgba(0, 217, 255, 0.1);
+}
+
+/* Container ícone + número */
+.container-icon-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Caixa do ícone */
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 8px;
+    background: rgba(0, 217, 255, 0.1);
+}
+
+/* Ícone */
+.icon {
+    color: #00d9ff;
+}
+
+/* Número grande */
+.text-span {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Texto label */
+.text-label {
+    font-size: 13px;
+    color: #9ca3af;
+}
 
 
 /* responsividade */
@@ -63,7 +195,7 @@
 
     #tela2 h1 {
         font-size: 36px;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .texth3 {
@@ -76,6 +208,25 @@
         line-break: anywhere;
         box-sizing: border-box;
         line-height: 1.5;
+        word-spacing: -2px;
     }
 
+    /* Container dos ícones */
+    .info-icons {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .icon-item {
+        flex: 1 1 calc(50% - 16px);
+        font-size: 12px;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+    }
 }
