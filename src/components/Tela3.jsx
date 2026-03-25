@@ -1,6 +1,6 @@
 import "./Tela3.css";
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { ExternalLink, Github, Smartphone, Globe, Star, Music, LayoutDashboard } from "lucide-react";
 
@@ -10,12 +10,15 @@ const PROJECTS_BG =
 const projects = [
   {
     title: "E-commerce Platform",
+    colorTitle: '#fff',
     description:
       "Plataforma completa de e-commerce com painel admin, pagamentos e gestão de estoque em tempo real.",
     tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
     type: "web",
     stars: 128,
-    color: "blue",
+    color: "#333",
+    color1: '#ffffff',
+    Iconcolor: '#fff',
     icon: Globe,
     demo: "#",
     repo: "#",
@@ -24,12 +27,15 @@ const projects = [
   },
   {
     title: "Finance Tracker App",
+    colorTitle: '#fff',
     description:
       "Aplicativo mobile para controle financeiro pessoal com gráficos interativos e metas de economia.",
     tags: ["React Native", "Expo", "Firebase", "Charts"],
     type: "mobile",
     stars: 89,
     color: "#06b6d4",
+    color1: '#ffffff',
+    Iconcolor: '#fff',
     icon: Smartphone,
     demo: "#",
     repo: "#",
@@ -43,7 +49,9 @@ const projects = [
     tags: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
     type: "fullstack",
     stars: 215,
-    color: "#fff",
+    color: "#333",
+    color1: '#333',
+    Iconcolor: '#333',
     icon: Globe,
     demo: "#",
     repo: "#",
@@ -52,12 +60,15 @@ const projects = [
   },
   {
     title: "Social Media Dashboard",
+    colorTitle: '#fff',
     description:
       "Dashboard analítico para redes sociais com integração de múltiplas plataformas e relatórios.",
     tags: ["React", "D3.js", "REST APIs", "Tailwind"],
     type: "web",
     stars: 67,
-    color: "blue",
+    color: "#333",
+    color1: '#ffffff',
+    Iconcolor: '#fff',
     icon: Globe,
     demo: "#",
     repo: "#",
@@ -66,12 +77,15 @@ const projects = [
   },
   {
     title: "Delivery App",
+    colorTitle: '#fff',
     description:
       "App de delivery com rastreamento em tempo real, sistema de avaliações e integração com mapas.",
     tags: ["React Native", "Node.js", "MongoDB", "Maps"],
     type: "mobile",
     stars: 143,
     color: "#06b6d4",
+    color1: '#ffffff',
+    Iconcolor: '#fff',
     icon: Smartphone,
     demo: "#",
     repo: "#",
@@ -85,7 +99,9 @@ const projects = [
     tags: ["Next.js", "Sanity", "TypeScript", "Vercel"],
     type: "fullstack",
     stars: 52,
-    color: "#fff",
+    color: "#333",
+    color1: '#333',
+    Iconcolor: '#333',
     icon: Globe,
     demo: "#",
     repo: "#",
@@ -94,12 +110,15 @@ const projects = [
   },
   {
     title: "Dashboard 1",
+    colorTitle: '#fff',
     description:
       "lorem iosum",
     tags: ["Next.js", "Sanity", "TypeScript", "Vercel"],
     type: "Dashboard",
     stars: 520,
-    color: "#f72a2a",
+    color: "#333",
+    color1: '#ffffff',
+    Iconcolor: '#fff',
     icon: LayoutDashboard,
     demo: "#",
     repo: "#",
@@ -113,12 +132,15 @@ const projects = [
     tags: ["Next.js", "Sanity", "TypeScript", "Vercel"],
     type: "Músicas",
     stars: 520,
-    color: "yellow",
+    color: "#333",
+    color1: '#ffffff',
+    colordescription: '#fff',
+    Iconcolor: '#fff',
     icon: Music,
     demo: "#",
     repo: "#",
     featured: true,
-    gradient: "project-yellow",
+    gradient: "project-amber",
   },
 ];
 
@@ -216,13 +238,12 @@ export default function Tela3() {
 
                 {/* Icon */}
                 <div className="project-icon">
-                  <Icon size={22} style={{ color: project.color }} />
+                  <Icon size={22} style={{ color: project.Iconcolor }} />
                 </div>
 
-                {/* Content */}
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-
+                {/* Descrição */}
+                <h3 style={{color: project.colorTitle}} className="project-title">{project.title}</h3>
+                <p style={{color: project.color1}} className="project-description">{project.description}</p>
                 {/* Tags */}
                 <div className="project-tags">
                   {project.tags.map((tag) => (
@@ -231,7 +252,7 @@ export default function Tela3() {
                       className="project-tag"
                       style={{
                         background: `${project.color}20`,
-                        color: project.color,
+                        color: project.color1,
                       }}
                     >
                       {tag}

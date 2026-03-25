@@ -216,25 +216,21 @@
 }
 
 /* Top Gradients */
-.project-cyan::before {
+.project-cyan {
   background: linear-gradient(to right, #06b6d4ff, #0891b2ff, #0e7490ff);
 }
-.project-blue::before {
+.project-blue {
   background: linear-gradient(to right, #2563ebff, #1d4ed8ff, #1e3a8aff);
 }
-.project-amber::before {
+.project-amber {
   background: linear-gradient(to right, #f59e0bff, #d97706ff, #b45309ff);
 }
-.project-white::before {
+.project-white {
   background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
-.project-red::before {
-  background: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 0, 0), rgb(255, 0, 0));
-}
-
-.project-yellow::before  {
-  background: linear-gradient(to right, yellow, yellow, yellow);
+.project-red {
+  background: linear-gradient(to right, rgb(255, 0, 0), rgb(177, 9, 9), rgb(61, 1, 1));
 }
 
 /* Badge */
@@ -293,14 +289,14 @@
   font-family: "Sora", sans-serif;
   font-weight: 800;
   font-size: 1.375rem;
-  color: white;
+  color: #222;
   margin-bottom: 1rem;
   line-height: 1.3;
   letter-spacing: -0.025em;
 }
 
 .project-description {
-  color: rgba(255, 255, 255, 0.75);
+  color: #888;
   font-size: 0.95rem;
   line-height: 1.65;
   margin-bottom: 1.5rem;
@@ -321,7 +317,6 @@
   font-weight: 600;
   font-family: "Fira Code", monospace;
   backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -346,7 +341,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #fbbf24;
+  color: #333;
   font-size: 0.95rem;
   font-weight: 700;
   text-shadow: 0 2px 8px rgba(251, 191, 36, 0.5);
@@ -375,6 +370,7 @@
 .project-link.github {
   backdrop-filter: blur(25px);
   background: rgba(255, 255, 255, 0.15);
+  color: #333;
 }
 
 .project-link.github::before {
