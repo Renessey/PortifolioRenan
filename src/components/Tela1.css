@@ -200,7 +200,7 @@
 
 /* BOTÃO GLASS */
 
-.glass-card {
+.card-glass {
 
     display: flex;
     align-items: center;
@@ -227,7 +227,7 @@
 
 }
 
-.glass-card:hover {
+.card-glass:hover {
 
     background: rgba(255, 255, 255, 0.08);
 

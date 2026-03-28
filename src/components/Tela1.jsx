@@ -89,7 +89,7 @@ export default function Tela1() {
                     >
                         Ver Projetos
                     </button>
-                    <button className="glass-card">
+                    <button className="card-glass">
                         <Download size={18} />
                         Baixar CV
                     </button>
