@@ -20,6 +20,14 @@ import Python from "./Emojis/python.webp";
 import Native from "./Emojis/native.svg";
 import Sql from "./Emojis/sql.png";
 import Mongo from "./Emojis/mongo.png";
+import Docker from "./Emojis/docker.webp";
+import Cloud from "./Emojis/cloud.png";
+import Git from "./Emojis/git.png";
+import Figma from "./Emojis/figma.png";
+import Kafka from "./Emojis/kafka.png";
+import Hub from "./Emojis/github.png";
+import Lmms from "./Emojis/lmms.png";
+import Excel from "./Emojis/excel.png";
 
 
 const PROJECTS_BG =
@@ -186,14 +194,14 @@ const techStack = [
   { name: "React Native", icon: Native },
   { name: "MySQL", icon: Sql },
   { name: "MongoDB", icon: Mongo },
-  { name: "Docker", icon: "🐳" },
-  { name: "AWS", icon: "☁️" },
-  { name: "Git", icon: "🔀" },
-  { name: "Figma", icon: "🎨" },
-  { name: "Firebase", icon: "🔥" },
-  { name: "GraphQL", icon: "◈" },
-  { name: "Redis", icon: "🔴" },
-  { name: "Tailwind", icon: "🌊" },
+  { name: "Docker", icon: Docker },
+  { name: "Google Cloud", icon: Cloud },
+  { name: "Git", icon: Git },
+  { name: "Figma", icon: Figma },
+  { name: "Kafka", icon: Kafka },
+  { name: "Github", icon: Hub },
+  { name: "Lmms", icon: Lmms },
+  { name: "Microsoft Excel", icon: Excel },
 ];
 
 function fadeInVariant(delay = 0) {
