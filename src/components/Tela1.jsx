@@ -74,6 +74,7 @@ export default function Tela1() {
     return (
         <section id="tela1" className="secao">
             <div className="hero-content">
+                <div className="projects-orb" />
                 <h1 className="hero-title">
                     Olá, eu sou<br />
                     <span className="highlight-cyan">Renan</span>
@@ -111,18 +112,18 @@ export default function Tela1() {
                     ))}
                 </div>
             </div>
-
+                    {/* Animated skill cards */}
             <div className="cards-container">
-                <div className="card card-cyan" style={{ "--delay": "0s" }}>
+                <div className="card card-cyan" style={{ "--delay": "1s" }}>
                     <div className="card-label">React</div>
                 </div>
-                <div className="card card-pink" style={{ "--delay": "0.1s" }}>
+                <div className="card card-pink" style={{ "--delay": "2s" }}>
                     <div className="card-label">Node.js</div>
                 </div>
-                <div className="card card-yellow" style={{ "--delay": "0.2s" }}>
+                <div className="card card-yellow" style={{ "--delay": "3s" }}>
                     <div className="card-label">Design</div>
                 </div>
-                <div className="card card-purple" style={{ "--delay": "0.3s" }}>
+                <div className="card card-purple" style={{ "--delay": "4s" }}>
                     <div className="card-label">Web3</div>
                 </div>
             </div>
