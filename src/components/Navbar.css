@@ -85,11 +85,15 @@
 /* hamburger */
 
 .hamburger {
-    display: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+        display: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
 
+    }
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* HAMBURGER ANIMADO */

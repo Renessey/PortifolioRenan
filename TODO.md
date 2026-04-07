@@ -1,24 +1,26 @@
-# TODO: Port ProjectsSection to Tela3
+# Fix Tela4/Contato Navigation
 
 ## Plan Progress
 
-### ✅ 1. Create TODO.md [DONE]
+### 1. Create TODO.md [DONE]
 
-### ✅ 2. Add Google Fonts to src/index.css [DONE]
+### ✅ 2. Fix src/components/Tela4.css with proper contact styles [DONE]
 
-- Import Sora (400,600,700), Fira Code (400,500)
+- Replace about-section styles with glassmorphism for contact form/info
+- Add padding-top: 8rem for navbar offset
+- Responsive grid, hovers, gradients matching Tela4.jsx
 
-### ✅ 3. Replace src/components/Tela3.jsx [DONE]
+### ✅ 3. Update src/components/Tela4.jsx with scroll-margin [DONE]
 
-- Port full JSX version with Framer Motion, full data, animations
+- Add scroll-margin-top: 100px to #Tela4 section
 
-### ✅ 4. Replace src/components/Tela3.css [DONE]
+### ✅ 4. Ensure smooth scroll in Navbar.css [DONE]
 
-- Full glassmorphism styles, responsive grid, hovers, backgrounds
+- Add html { scroll-behavior: smooth; }
 
-### ✅ 5. Test implementation [DONE]
+### ✅ 5. Run `npm run dev` and test [DONE]
 
-- `npm run dev` running on http://localhost:5174/
-- Scroll to Tela3 section to verify glassmorphism, animations, filtering, hovers match reference
+- Dev server: http://localhost:5174/
+- Navbar "Contato" scrolls smoothly to styled Tela4
 
-### ✅ 6. Task Complete [DONE]
+### ✅ 6. Update TODO.md and attempt_completion [DONE]
