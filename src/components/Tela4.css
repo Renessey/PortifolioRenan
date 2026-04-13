@@ -1,16 +1,29 @@
 /* ── Tela 4 — Contato ── */
 #tela4 {
+  width: 100%;
   display: flex;
   position: relative;
   overflow: hidden;
   padding: 2rem;
   height: auto;
+  justify-content: center; /* só isso já centraliza */
 }
+
+body {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #fff;
+  font-family: "Sora", sans-serif;
+  overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
+  }
 
 .conteudo-central {
   position: relative;
   z-index: 10;
   width: 80%;
+  max-width: 1100px; /* limita sem mudar visual */
   margin: 0 auto;
   padding: 2rem;
   margin-top: 5rem;
@@ -49,26 +62,21 @@
 }
 
 .grade-contato {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 2rem;
-}
-
-@media (max-width: 1024px) {
-  .grade-contato {
-    grid-template-columns: 1fr;
-  }
+  width: 100%;
+  max-width: 100%;
 }
 
 .coluna-info {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.25rem;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .cartao-info {
   padding: 1rem;
-  border-radius: 0.75rem;
+  
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -129,6 +137,7 @@
 .cartao-disponibilidade {
   padding: 1.25rem;
   border-radius: 0.75rem;
+  text-align: center;
 }
 
 .linha-disponibilidade {
@@ -136,6 +145,8 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
+  text-align: center;
+  justify-content: center;
 }
 
 .ponto-disponivel {
@@ -157,6 +168,8 @@
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.875rem;
   margin: 0;
+  width: 100%;
+  
 }
 
 .coluna-formulario {
@@ -206,11 +219,7 @@
   gap: 1rem;
 }
 
-@media (max-width: 640px) {
-  .grade-campos {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 .rotulo-campo {
   display: block;
@@ -221,6 +230,7 @@
 
 .campo-texto {
   width: 100%;
+  max-width: 100%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.75rem;
@@ -274,5 +284,70 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .grade-contato {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .conteudo-central {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .coluna-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  img, iframe, video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #tela4 {
+    width: 100%;
+    padding: 1rem;
+  }
+  .conteudo-central {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  .titulo-principal {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    width: 100%;
+    gap: 1rem;
+  }
+  .gradient-text {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+  .grade-campos {
+    grid-template-columns: 1fr;
   }
 }

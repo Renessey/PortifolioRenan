@@ -159,7 +159,9 @@ export default function Tela4() {
               </div>
             </div>
 
-            {/* Availability badge */}
+            
+          </motion.div>
+          {/* Availability badge */}
             <div className="glass-card cartao-disponibilidade">
               <div className="linha-disponibilidade">
                 <span className="ponto-disponivel animate-pulse" />
@@ -168,103 +170,9 @@ export default function Tela4() {
                 </span>
               </div>
               <p className="descricao-disponibilidade">
-                Atualmente aceitando novos projetos freelance e oportunidades de
-                colaboração.
+                Aceito propostas , freelas e oportunidades de trabalho. Vamos criar algo incrível juntos!
               </p>
             </div>
-          </motion.div>
-
-          {/* Right: form */}
-          <motion.div
-            variants={fadeInVariant(0.2)}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            className="coluna-formulario"
-          >
-            <form onSubmit={handleSubmit} className="glass-card formulario">
-              <div className="cabecalho-formulario">
-                <div className="icone-formulario">
-                  <MessageSquare size={18} style={{ color: "#a78bfa" }} />
-                </div>
-                <h3 className="titulo-formulario">Enviar Mensagem</h3>
-              </div>
-
-              <div className="grade-campos">
-                <div>
-                  <label className="rotulo-campo">Nome</label>
-                  <input
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Seu nome"
-                    className="campo-texto"
-                  />
-                </div>
-                <div>
-                  <label className="rotulo-campo">Email</label>
-                  <input
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={(e) =>
-                      setForm({ ...form, email: e.target.value })
-                    }
-                    placeholder="seu@email.com"
-                    className="campo-texto"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="rotulo-campo">Assunto</label>
-                <input
-                  type="text"
-                  required
-                  value={form.subject}
-                  onChange={(e) =>
-                    setForm({ ...form, subject: e.target.value })
-                  }
-                  placeholder="Sobre o que você quer falar?"
-                  className="campo-texto"
-                />
-              </div>
-
-              <div>
-                <label className="rotulo-campo">Mensagem</label>
-                <textarea
-                  required
-                  rows={5}
-                  value={form.message}
-                  onChange={(e) =>
-                    setForm({ ...form, message: e.target.value })
-                  }
-                  placeholder="Descreva seu projeto ou ideia..."
-                  className="campo-texto area-mensagem"
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                disabled={sending}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="btn-gradient botao-enviar"
-              >
-                {sending ? (
-                  <>
-                    <div className="spinner-envio" />
-                    Enviando...
-                  </>
-                ) : (
-                  <>
-                    <Send size={18} />
-                    Enviar Mensagem
-                  </>
-                )}
-              </motion.button>
-            </form>
-          </motion.div>
         </div>
       </div>
     </section>

@@ -238,7 +238,7 @@ export default function Tela3() {
           animate={isInView ? "visible" : "hidden"}
           className="projects-header"
         >
-          <span className="projects-subtitle">// PROJETOS</span>
+          <span className="projects-subtitle"></span>
 
           <h2 className="projects-title">
             Meus <span>Projetos</span>
