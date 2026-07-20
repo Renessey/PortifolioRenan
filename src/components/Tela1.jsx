@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import "./Tela1.css"
+import curriculo from "./Emojis/curriculo.jpeg";
 
 const roles = [
     "Desenvolvedor Full Stack",
@@ -66,11 +67,19 @@ const Download = ({ size = 18 }) => (
 const socialLinks = [
     { icon: Github, href: "https://github.com/Renessey", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/renan-monteiro-052b623a6/", label: "LinkedIn" },
-    { icon: Mail, href: "https://mail.google.com/mail/u/0/?hl=pt_BR#inbox?compose=new", label: "Email" },
+    { icon: Mail, href: "mailto:renanneteller20@gmail.com", label: "Email" },
 ];
 
-
 export default function Tela1() {
+    const handleDownloadCV = () => {
+        const link = document.createElement("a");
+        link.href = curriculo;
+        link.download = "Curriculo_Renan_Monteiro.jpeg";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <section id="tela1" className="secao">
             <div className="hero-content">
@@ -85,12 +94,12 @@ export default function Tela1() {
                 {/* CTA Buttons */}
                 <div className="hero-buttons">
                     <button
-                        onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+                        onClick={() => document.getElementById("tela3")?.scrollIntoView({ behavior: "smooth" })}
                         className="btn-gradient"
                     >
                         Ver Projetos
                     </button>
-                    <button className="card-glass">
+                    <button onClick={handleDownloadCV} className="card-glass">
                         <Download size={18} />
                         Baixar CV
                     </button>

@@ -18,8 +18,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "contato@exemplo.com",
-    href: "mailto:contato@exemplo.com",
+    value: "renanneteller20@gmail.com",
+    href: "mailto:renanneteller20@gmail.com",
     color: "#7c3aed",
   },
   {
@@ -41,25 +41,19 @@ const contactInfo = [
 const socialLinks = [
   {
     icon: Github,
-    href: "https://github.com",
+    href: "https://github.com/Renessey?tab=repositories",
     label: "GitHub",
     color: "#ffffff",
   },
   {
     icon: Linkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/renan-monteiro-052b623a6/",
     label: "LinkedIn",
     color: "#0077b5",
   },
   {
-    icon: Twitter,
-    href: "https://twitter.com",
-    label: "Twitter",
-    color: "#1da1f2",
-  },
-  {
     icon: Mail,
-    href: "mailto:contato@exemplo.com",
+    href: "mailto:renanneteller20@gmail.com",
     label: "Email",
     color: "#7c3aed",
   },

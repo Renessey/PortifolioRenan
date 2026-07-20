@@ -12,6 +12,9 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 
+import projectsJson from "../data/projects.json";
+
+
 import reactLogo from "./Emojis/react.png";
 import Typescript from "./Emojis/typescript.png";
 import Js from "./Emojis/js.png";
@@ -33,148 +36,18 @@ import Excel from "./Emojis/excel.png";
 const PROJECTS_BG =
   "https://private-us-east-1.manuscdn.com/sessionFile/IQXsUKTSYPEsRrWnBC1Hjr/sandbox/SrEQZVWoZD3NvruoQFQGnL-img-3_1772146266000_na1fn_cHJvamVjdHMtYmc.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvSVFYc1VLVFNZUEVzUnJXbkJDMUhqci9zYW5kYm94L1NyRVFaVldvWkQzTnZydW9RRlFHbkwtaW1nLTNfMTc3MjE0NjI2NjAwMF9uYTFmbl9jSEp2YW1WamRITXRZbWMucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=eAon31OEmsmazX6BxyhlTKwxtm0RKX9N~biWGM4yaFUN8pK1XRIIS~7bblQn--qG2z2uUl98YeRJApX-sOHi-qp~8dEczw5v31SQELCkLaBJNnQbmNymGLJ1utscy9OmSkhh6o-iLCQqG-A2ve7UGzm8xZkh1iKnYSRknM2QuO~HryvEOfG2f-8R2fwP-UlTttZ1AdAIgrWdMuzsrsfO~mCRoVd5L1uYU9YZjlsdR-IYO4rFG2FYdv7iRHCIfa87gneGlh8VkLDBzuRutZfx0N~~2Bs9CJUJGWfIrvPkCPBEzSwW3fAjxSAmkA1-VgvBrRySv70EWEnOyLgyFOEpBQ__";
 
-const projects = [
-  {
-    title: "E-commerce Platform",
-    colorTitle: "#fff",
-    description:
-      "Plataforma completa de e-commerce com painel admin, pagamentos e gestão de estoque em tempo real.",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    type: "web",
-    stars: 128,
-    color: "#333",
-    color1: "#ffffff",
-    Iconcolor: "#fff",
-    starsColor: "yellow",
-    icon: Globe,
-    demo: "#",
-    repo: "#",
-    featured: true,
-    gradient: "project-blue",
-  },
-  {
-    title: "Finance Tracker App",
-    colorTitle: "#fff",
-    description:
-      "Aplicativo mobile para controle financeiro pessoal com gráficos interativos e metas de economia.",
-    tags: ["React Native", "Expo", "Firebase", "Charts"],
-    type: "mobile",
-    stars: 89,
-    color: "#06b6d4",
-    color1: "#ffffff",
-    Iconcolor: "#fff",
-    starsColor: "yellow",
-    icon: Smartphone,
-    demo: "#",
-    repo: "#",
-    featured: true,
-    gradient: "project-cyan",
-  },
-  {
-    title: "Task Management SaaS",
-    description:
-      "SaaS de gerenciamento de tarefas com colaboração em tempo real, kanban e relatórios automáticos.",
-    tags: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
-    type: "fullstack",
-    stars: 215,
-    color: "#333",
-    color1: "#333",
-    Iconcolor: "#333",
-    starsColor: "#333",
-    icon: Globe,
-    demo: "#",
-    repo: "#",
-    featured: true,
-    gradient: "project-white",
-  },
-  {
-    title: "Social Media Dashboard",
-    colorTitle: "#fff",
-    description:
-      "Dashboard analítico para redes sociais com integração de múltiplas plataformas e relatórios.",
-    tags: ["React", "D3.js", "REST APIs", "Tailwind"],
-    type: "web",
-    stars: 67,
-    color: "#333",
-    color1: "#ffffff",
-    Iconcolor: "#fff",
-    starsColor: "yellow",
-    icon: Globe,
-    demo: "#",
-    repo: "#",
-    featured: false,
-    gradient: "project-blue",
-  },
-  {
-    title: "Delivery App",
-    colorTitle: "#fff",
-    description:
-      "App de delivery com rastreamento em tempo real, sistema de avaliações e integração com mapas.",
-    tags: ["React Native", "Node.js", "MongoDB", "Maps"],
-    type: "mobile",
-    stars: 143,
-    color: "#06b6d4",
-    color1: "#ffffff",
-    Iconcolor: "#fff",
-    starsColor: "yellow",
-    icon: Smartphone,
-    demo: "#",
-    repo: "#",
-    featured: false,
-    gradient: "project-cyan",
-  },
-  {
-    title: "Blog CMS",
-    description:
-      "Sistema de gerenciamento de conteúdo headless com editor rich text e SEO automático.",
-    tags: ["Next.js", "Sanity", "TypeScript", "Vercel"],
-    type: "fullstack",
-    stars: 52,
-    color: "#333",
-    color1: "#333",
-    Iconcolor: "#333",
-    starsColor: "#333",
-    icon: Globe,
-    demo: "#",
-    repo: "#",
-    featured: false,
-    gradient: "project-white",
-  },
-  {
-    title: "Dashboard 1",
-    colorTitle: "#fff",
-    description: "lorem iosum",
-    tags: ["Next.js", "Sanity", "TypeScript", "Vercel"],
-    type: "Dashboard",
-    stars: 520,
-    color: "#333",
-    color1: "#ffffff",
-    Iconcolor: "#fff",
-    starsColor: "yellow",
-    icon: LayoutDashboard,
-    demo: "#",
-    repo: "#",
-    featured: false,
-    gradient: "project-red",
-  },
-  {
-    title: "Music One",
-    description: "lorem iosum",
-    tags: ["Next.js", "Sanity", "TypeScript", "Vercel"],
-    type: "Músicas",
-    stars: 520,
-    color: "#333",
-    color1: "#ffffff",
-    colordescription: "#fff",
-    Iconcolor: "#fff",
-    starsColor: "#333",
-    icon: Music,
-    demo: "#",
-    repo: "#",
-    featured: true,
-    gradient: "project-amber",
-  },
-];
+const iconMap = {
+  Globe,
+  Smartphone,
+  Music,
+  LayoutDashboard,
+};
+
+const projects = projectsJson.map((p) => ({
+  ...p,
+  icon: iconMap[p.iconKey] ?? Globe,
+}));
+
 
 const filters = [
   { label: "Todos", value: "all" },
@@ -323,16 +196,11 @@ export default function Tela3() {
 
                 {/* Footer */}
                 <div className="project-footer">
-                  <div
-                    className="project-stars"
-                    style={{ color: `${project.starsColor}` }}
-                  >
-                    <Star size={14} />
-                    <span>{project.stars}</span>
-                  </div>
                   <div className="project-links">
                     <motion.a
                       href={project.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       className="project-link github"
                     >
@@ -340,6 +208,8 @@ export default function Tela3() {
                     </motion.a>
                     <motion.a
                       href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       className="project-link demo"
                       style={{ background: project.color }}
