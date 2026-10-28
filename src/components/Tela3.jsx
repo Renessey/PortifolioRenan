@@ -1,8 +1,9 @@
 import "./Tela3.css";
 import { useRef, useState } from "react";
-import { color, motion, inView, } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+
 import {
+  Download,
   ExternalLink,
   Github,
   Smartphone,
@@ -10,7 +11,11 @@ import {
   Star,
   Music,
   LayoutDashboard,
+  ShieldCheck,
 } from "lucide-react";
+
+
+
 
 import projectsJson from "../data/projects.json";
 
@@ -52,11 +57,12 @@ const projects = projectsJson.map((p) => ({
 const filters = [
   { label: "Todos", value: "all" },
   { label: "Web", value: "web" },
-  { label: "Mobile", value: "mobile" },
+  { label: "App android", value: "mobile" },
   { label: "Full Stack", value: "fullstack" },
   { label: "Dashboard", value: "Dashboard" },
   { label: "Músicas", value: "Músicas" },
 ];
+
 
 const techStack = [
   { name: "React", icon: reactLogo },
@@ -111,16 +117,16 @@ export default function Tela3() {
           animate={isInView ? "visible" : "hidden"}
           className="projects-header"
         >
-          <span className="projects-subtitle"></span>
+          <span className="section-badge">02 // PROJETOS</span>
 
           <h2 className="projects-title">
             Meus <span>Projetos</span>
           </h2>
           <p className="projects-description">
-            Uma seleção dos projetos que desenvolvi, desde aplicações web até
-            apps mobile.
+            Uma seleção de aplicações e sistemas desenvolvidos com foco em performance, experiência e usabilidade.
           </p>
         </motion.div>
+
 
         {/* Filtros */}
         <motion.div
@@ -139,6 +145,22 @@ export default function Tela3() {
             </button>
           ))}
         </motion.div>
+
+        {/* Aviso Mediafire / LGPD exibido ao selecionar App android */}
+        {activeFilter === "mobile" && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+            className="mediafire-disclaimer"
+          >
+            <ShieldCheck size={18} className="mediafire-shield-icon" />
+            <span>
+              Todos os links de downloads são feitos através do site Mediafire, não contêm itens de caráter invasivo ou contra as leis LGPD.
+            </span>
+          </motion.div>
+        )}
+
 
         {/* cards */}
         <div className="projects-grid">
@@ -196,29 +218,45 @@ export default function Tela3() {
 
                 {/* Footer */}
                 <div className="project-footer">
-                  <div className="project-links">
+                  {project.type === "mobile" ? (
                     <motion.a
-                      href={project.repo}
+                      href={project.download || (project.demo !== "#" ? project.demo : project.repo) || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      className="project-link github"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="project-btn-download"
                     >
-                      <Github size={15} />
+                      <Download size={16} />
+                      <span>Baixar</span>
                     </motion.a>
-                    <motion.a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      className="project-link demo"
-                      style={{ background: project.color }}
-                    >
-                      <ExternalLink size={15} />
-                    </motion.a>
-                  </div>
+                  ) : (
+                    <div className="project-links">
+                      <motion.a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        className="project-link github"
+                      >
+                        <Github size={15} />
+                      </motion.a>
+                      <motion.a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        className="project-link demo"
+                        style={{ background: project.color }}
+                      >
+                        <ExternalLink size={15} />
+                      </motion.a>
+                    </div>
+                  )}
                 </div>
               </motion.div>
+
+
             );
           })}
         </div>
@@ -231,7 +269,7 @@ export default function Tela3() {
           className="projects-cta"
         >
           <motion.a
-            href="https://github.com"
+            href="https://github.com/Renessey"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -241,13 +279,14 @@ export default function Tela3() {
             <Github size={18} />
             Ver todos no GitHub
           </motion.a>
+
         </motion.div>
 
         <motion.div
           variants={fadeInVariant(0.3)}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="glass-card p-6 rounded-2xl"
+          animate={isInView ? "visible" : "hidden"}
+          className="glass-card tech-stack-container"
         >
           <h3
             className="techStack"

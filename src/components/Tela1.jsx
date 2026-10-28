@@ -4,9 +4,9 @@ import curriculo from "./Emojis/curriculo.jpeg";
 
 const roles = [
     "Desenvolvedor Full Stack",
-    "Criador de Apps Mobile",
-    "Web Developer",
-    "Backend Specialist",
+    "Especialista em React & Node.js",
+    "Criador de Apps Mobile & Web",
+    "Arquiteto de Soluções Modernas",
 ];
 
 function TypewriterText({ texts }) {
@@ -19,15 +19,18 @@ function TypewriterText({ texts }) {
         let timeout = setTimeout(() => { }, 100);
 
         if (!deleting && displayed.length < current.length) {
-            timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80);
+            timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 70);
         } else if (!deleting && displayed.length === current.length) {
-            timeout = setTimeout(() => setDeleting(true), 2500);
+            timeout = setTimeout(() => setDeleting(true), 2400);
         } else if (deleting && displayed.length > 0) {
-            timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40);
+            timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 35);
         } else if (deleting && displayed.length === 0) {
-            setDeleting(false);
-            setIndex((i) => (i + 1) % texts.length);
+            timeout = setTimeout(() => {
+                setDeleting(false);
+                setIndex((i) => (i + 1) % texts.length);
+            }, 150);
         }
+
 
         return () => clearTimeout(timeout);
     }, [displayed, deleting, index, texts]);
@@ -81,15 +84,29 @@ export default function Tela1() {
     };
 
     return (
-        <section id="tela1" className="secao">
+        <section id="tela1" className="secao hero-secao">
+            <div className="hero-ambient-glow" />
+            
             <div className="hero-content">
-                <div className="projects-orb" />
+                {/* Status Badge */}
+                <div className="hero-status-badge">
+                    <span className="status-dot-pulse"></span>
+                    <span>Disponível para novos projetos & posições</span>
+                </div>
+
                 <h1 className="hero-title">
-                    Olá, eu sou<br />
-                    <span className="highlight-cyan">Renan</span>
+                    Olá, eu sou <br className="mobile-break" />
+                    <span className="highlight-name">Renan Monteiro</span>
                 </h1>
-                <TypewriterText texts={roles} />
-                <p className="hero-subtitle">Transformando ideias em experiências digitais imersivas</p>
+
+                <div className="typewriter-wrapper">
+                    <TypewriterText texts={roles} />
+                </div>
+
+                <p className="hero-subtitle">
+                    Transformando desafios complexos em produtos digitais de alta performance, 
+                    com foco em escalabilidade, código limpo e arquitetura moderna.
+                </p>
 
                 {/* CTA Buttons */}
                 <div className="hero-buttons">
@@ -98,8 +115,12 @@ export default function Tela1() {
                         className="btn-gradient"
                     >
                         Ver Projetos
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "8px" }}>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
                     </button>
-                    <button onClick={handleDownloadCV} className="card-glass">
+                    <button onClick={handleDownloadCV} className="card-glass btn-cv">
                         <Download size={18} />
                         Baixar CV
                     </button>
@@ -113,29 +134,35 @@ export default function Tela1() {
                             href={href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hero-social-link glass-card"
+                            className="hero-social-link"
                             aria-label={label}
+                            title={label}
                         >
-                            <Icon size={20} />
+                            <Icon size={19} />
                         </a>
                     ))}
                 </div>
             </div>
-                    {/* Animated skill cards */}
+
+            {/* Floating Tech Chips */}
             <div className="cards-container">
-                <div className="card card-cyan" style={{ "--delay": "1s" }}>
-                    <div className="card-label">React</div>
+                <div className="card card-cyan" style={{ "--delay": "0s" }}>
+                    <span className="card-chip-dot"></span>
+                    <span className="card-label">React</span>
                 </div>
-                <div className="card card-pink" style={{ "--delay": "2s" }}>
-                    <div className="card-label">Node.js</div>
+                <div className="card card-pink" style={{ "--delay": "1.5s" }}>
+                    <span className="card-chip-dot"></span>
+                    <span className="card-label">Node.js</span>
                 </div>
                 <div className="card card-yellow" style={{ "--delay": "3s" }}>
-                    <div className="card-label">Design</div>
+                    <span className="card-chip-dot"></span>
+                    <span className="card-label">TypeScript</span>
                 </div>
-                <div className="card card-purple" style={{ "--delay": "4s" }}>
-                    <div className="card-label">Web3</div>
+                <div className="card card-purple" style={{ "--delay": "4.5s" }}>
+                    <span className="card-chip-dot"></span>
+                    <span className="card-label">Mobile</span>
                 </div>
             </div>
         </section>
     )
-}
+}

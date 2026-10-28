@@ -1,23 +1,44 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap");
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* Fontes */
+  font-family: "Sora", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
+  color-scheme: dark;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #0a0e27;
-  --neon-cyan: #00d9ff;
-  --neon-pink: #ff006e;
-  --neon-purple: #8338ec;
-  --neon-yellow: #ffbe0b;
-  --neon-green: #00ff41;
-  --dark-bg: #0a0e27;
-  --darker-bg: #050810;
-  --card-bg: #1a1f3a;
-  --text-light: #ffffff;
-  --text-muted: #b0b8c1;
+  /* Tema Dark Profissional */
+  --bg-primary: #07090e;
+  --bg-secondary: #0b0f19;
+  --bg-card: rgba(14, 19, 32, 0.72);
+  --bg-card-hover: rgba(20, 27, 45, 0.85);
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+  --border-glow: rgba(99, 102, 241, 0.4);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  /* Acentos Elegantes */
+  --accent-indigo: #6366f1;
+  --accent-cyan: #06b6d4;
+  --accent-purple: #8b5cf6;
+  --accent-emerald: #10b981;
+  --accent-blue: #3b82f6;
+
+  /* Compatibilidade com variáveis existentes */
+  --neon-cyan: #06b6d4;
+  --neon-pink: #ec4899;
+  --neon-purple: #8b5cf6;
+  --neon-yellow: #f59e0b;
+  --neon-green: #10b981;
+  --dark-bg: #07090e;
+  --darker-bg: #040508;
+  --card-bg: #0e1320;
+  --text-light: #f8fafc;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,19 +46,84 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  font-family: "Sora", sans-serif;
-  background-color: var(--dark-bg);
-  color: var(--text-light);
-  line-height: 1.6;
-  overflow-x: hidden;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body {
+  font-family: "Sora", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99, 102, 241, 0.15), transparent),
+    radial-gradient(circle at 100% 40%, rgba(6, 182, 212, 0.06), transparent 50%),
+    radial-gradient(circle at 0% 70%, rgba(139, 92, 246, 0.06), transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Seleção de texto */
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: #ffffff;
+}
+
+/* Scrollbar refinada */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07090e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 999px;
+  border: 2px solid #07090e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Badge de seção reutilizável */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: "Fira Code", monospace;
+  background: rgba(99, 102, 241, 0.1);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  margin-bottom: 1rem;
+}
+
+/* Vidro genérico escuro */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
 }

@@ -17,10 +17,10 @@
     "gradient": "project-blue"
   },
   {
-    "title": "Finance Tracker App",
+    "title": "UpperMusic App",
     "colorTitle": "#fff",
-    "description": "Aplicativo mobile para controle financeiro pessoal com gráficos interativos e metas de economia.",
-    "tags": ["React Native", "Expo", "Firebase", "Charts"],
+    "description": "Aplicativo mobile android para baixar e escutar músicas.",
+    "tags": ["React Native", "CLI", "Javascript"],
     "type": "mobile",
     "stars": 89,
     "color": "#06b6d4",
@@ -28,11 +28,13 @@
     "Iconcolor": "#fff",
     "starsColor": "yellow",
     "iconKey": "Smartphone",
+    "download": "https://www.mediafire.com/file/3jg6g4lzmiq1xsk/app-release.apk/file",
     "demo": "#",
     "repo": "#",
     "featured": true,
     "gradient": "project-cyan"
   },
+
   {
     "title": "Task Management SaaS",
     "description": "SaaS de gerenciamento de tarefas com colaboração em tempo real, kanban e relatórios automáticos.",
@@ -78,11 +80,13 @@
     "Iconcolor": "#fff",
     "starsColor": "yellow",
     "iconKey": "Smartphone",
+    "download": "#",
     "demo": "#",
     "repo": "#",
     "featured": false,
     "gradient": "project-cyan"
   },
+
   {
     "title": "Blog CMS",
     "description": "Sistema de gerenciamento de conteúdo headless com editor rich text e SEO automático.",

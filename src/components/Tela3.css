@@ -17,9 +17,10 @@
 .projects-bg-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, #0d0d1a, #0e0e1f90, #0d0d1a);
+  background: linear-gradient(to bottom, var(--bg-primary), rgba(11, 15, 25, 0.75), var(--bg-primary));
   z-index: 2;
 }
+
 
 .projects-orb {
   position: absolute;
@@ -88,11 +89,12 @@
 }
 
 .projects-title span {
-  background: linear-gradient(135deg, #7c3aed, #024ef0);
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 
 .projects-description {
   color: rgba(255, 255, 255, 0.6);
@@ -161,6 +163,42 @@
     0 0 0 1px rgba(124, 58, 237, 0.6),
     0 8px 25px rgba(124, 58, 237, 0.3);
 }
+
+/* Aviso Mediafire / LGPD */
+.mediafire-disclaimer {
+  max-width: 780px;
+  margin: -2.5rem auto 3.5rem;
+  padding: 0.85rem 1.35rem;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: #a7f3d0;
+  text-align: center;
+  line-height: 1.5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mediafire-shield-icon {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .mediafire-disclaimer {
+    border-radius: 1rem;
+    margin: -2.5rem 1rem 3rem;
+    font-size: 0.785rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
 
 /* Grid */
 .projects-grid {
@@ -330,11 +368,41 @@
 .project-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 1.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  justify-content: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   margin-top: auto;
+  width: 100%;
 }
+
+.project-btn-download {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 0.75rem;
+  font-family: "Sora", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.3));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.project-btn-download:hover {
+  background: linear-gradient(135deg, #0284c7, #4f46e5);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.4);
+  color: #ffffff;
+}
+
 
 .project-stars {
   display: flex;
@@ -459,16 +527,20 @@
     0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
-/* Card principal (efeito glassmorphism) */
+/* Card principal Tech Stack (efeito glassmorphism escuro) */
+.tech-stack-container,
 .p-6 {
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   display: block;
-  box-shadow: 0 5px 40px rgba(238, 16, 16, 0.6);
+  background: rgba(14, 19, 32, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
-  padding: 2rem;
+  padding: 2.25rem;
   border-radius: 1.5rem;
 }
+
 
 .glass-card:hover {
   transform: translateY(-5px);
